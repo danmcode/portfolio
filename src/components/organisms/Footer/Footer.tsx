@@ -37,7 +37,7 @@ export const Footer = () => {
 
             <div className="flex space-x-4">
                 <Link
-                    href="https://github.com/daveinthahood"
+                    href="https://github.com/danmcode"
                     className="hover:text-white transition-colors duration-200"
                     aria-label="GitHub Profile"
                     variant="tab"
@@ -46,7 +46,7 @@ export const Footer = () => {
                 </Link>
 
                 <Link
-                    href="https://www.linkedin.com/in/davide-simone-a2823619a/"
+                    href="https://www.linkedin.com/in/danmcode/"
                     className="hover:text-white transition-colors duration-200"
                     aria-label="LinkedIn Profile"
                     variant="tab"
