@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Redirecting...</title>
+</head>
+
+<body>
+    <script>
+        var redirectTo = location.pathname.replace(/\/portfolio/, '') || '/';
+        location.replace('/portfolio' + redirectTo);
+    </script>
+</body>
+
+</html>
