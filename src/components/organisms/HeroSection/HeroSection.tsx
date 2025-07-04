@@ -13,8 +13,11 @@ import { experienceData } from '../../../data/ExperienceData';
  */
 export const HeroSection: React.FC = () => {
     return (
-        <section id="hello" className="h-full flex flex-col lg:flex-row justify-center items-start py-16 md:py-24 gap-8 lg:gap-12">
-            <div className="flex flex-col items-start lg:w-1/2">
+        <section
+            id="hello"
+            className="w-full flex flex-col lg:flex-row justify-center items-start py-16 md:py-24 gap-8 lg:gap-12 px-4 sm:px-6"
+        >
+            <div className="flex flex-col items-start w-full lg:w-1/2 max-w-full">
                 <Text variant="p" className="text-lg text-gray-300 mb-2">
                     Hola 👋, soy
                 </Text>
@@ -44,7 +47,7 @@ export const HeroSection: React.FC = () => {
                 </pre>
             </div>
 
-            <div className="lg:w-1/2 h-full">
+            <div className="w-full lg:w-1/2 max-w-full">
                 <WorkExperienceStepper data={experienceData} />
             </div>
         </section>
