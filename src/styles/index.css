@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+:root {
+    --black-danmcode: #161616;
+    --gray-danmcode: #292929;
+    --green-danmcode: #18AA80;
+    --bs-dark: #212529;
+    --dark-blue: #1A202C;
+    --brand-green: #00BCD4;
+    --blue-400: #60A5FA;
+    --green-400: #4ADE80;
+    --orange-300: #FDBA74;
+    --yellow-300: #FDE047;
+    --gray-400: #9CA3AF;
+    --gray-800: #1F2937;
+    --blue-950: #080A1A;
+}
