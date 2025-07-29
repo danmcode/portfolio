@@ -23,7 +23,7 @@ interface LinkProps {
  * @param {'default' | 'tab'} [props.variant='default'] - The style variant of the link.
  * @param {function} [props.onClick] - Optional callback function for click events.
  */
-export const Link: React.FC<LinkProps> = ({ href, children, className, variant = 'default', onClick }) => {
+export const Link: React.FC<LinkProps> = ({ href, children, className, variant = 'default', onClick }: LinkProps) => {
 
     return (
         <NavLink

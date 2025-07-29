@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom"
 import { HeroSection } from "./components/organisms/HeroSection"
-import { PageLayout } from "./components/templates/PageLayout"
+import { PageLayout } from "./layouts"
 import { ProjectsPage } from "./pages/Projects/ProjectPage"
 import { AboutPage } from "./pages/About"
 

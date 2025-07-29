@@ -60,7 +60,6 @@ export const Header: React.FC = () => {
                 <div className="hidden h-full lg:flex lg:items-center lg:px-4 lg:py-2 lg:flex-shrink-0 lg:min-w-0">
                     <Link
                         href="#contact-me"
-                        isActive={activeSection === 'contact-me'}
                         variant="tab"
                         className="!border-r-0 !px-0 !py-0"
                     >
@@ -78,15 +77,9 @@ export const Header: React.FC = () => {
                     </div>
 
                     <div className="py-4 px-4 text-center border-t border-gray-700">
-                        <Link
-                            href="#contact-me"
-                            isActive={activeSection === 'contact-me'}
-                            variant="default"
-                            className="block w-full text-lg"
-                            onClick={toggleMobileMenu}
-                        >
-                            _contact-me
-                        </Link>
+                        <button>
+                            download_cv
+                        </button>
                     </div>
                 </div>
             )}
