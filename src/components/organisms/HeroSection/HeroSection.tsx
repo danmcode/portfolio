@@ -33,16 +33,61 @@ export const HeroSection: React.FC = () => {
                 <pre className="bg-gray-800 p-4 rounded-lg text-sm leading-relaxed max-w-full overflow-x-auto">
                     <code className="language-typecript">
                         <span className="text-gray-400">// mi número de teléfono</span>{"\n"}
-                        <span className="text-blue-400">const</span> <span className="text-green-400">telephoneNum</span> <span className="text-white">=</span> <span className="text-yellow-300">310 890 35 71</span>;{"\n"}
+                        <span className="text-blue-400">const </span>
+                        <span className="text-green-400">telephoneNum </span>
+                        <span className="text-white">= </span>
+                        <a
+                            href="https://wa.me/573108903571"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-orange-300 underline underline-offset-2 hover:text-green-400"
+                        >
+                            310 890 35 71
+                        </a>;
+                        {"\n"}
                         {"\n"}
                         <span className="text-gray-400">// mi correo electrónico</span>{"\n"}
-                        <span className="text-blue-400">const</span> <span className="text-green-400">email</span> <span className="text-white">=</span> <span className="text-orange-300">"danmcode@gmail.com"</span>;{"\n"}
+                        <span className="text-blue-400">const </span>
+                        <span className="text-green-400">email </span>
+                        <span className="text-white">= </span>
+                        <a
+                            href="mailto:%22Daniel%20Muelas%20Rivera%22%20<danmcode@gmail.com>?subject=Contacto%20desde%20tu%20portfolio"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-orange-300 underline underline-offset-2 hover:text-green-400"
+                        >
+                            danmcode@gmail.com
+                        </a>;
+                        {"\n"}
                         {"\n"}
                         <span className="text-gray-400">// También puedes visitar es mi GitHub</span>{"\n"}
-                        <span className="text-blue-400">const</span> <span className="text-green-400">githubLink</span> <span className="text-white">=</span> <span className="text-orange-300">"https://github.com/danmcode"</span>;{"\n"}
+                        <span className="text-blue-400">const </span>
+                        <span className="text-green-400">githubLink </span>
+                        <span className="text-white">= </span>
+                        <a
+                            href="https://github.com/danmcode"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-orange-300 underline underline-offset-2 hover:text-green-400"
+                        >
+                            https://github.com/danmcode
+                        </a>;
                         {"\n"}
-                        <span className="text-gray-400">// Puedes visitarme en mi LinkedIn</span>{"\n"}
-                        <span className="text-blue-400">const</span> <span className="text-green-400">linkedInPage</span> <span className="text-white">=</span> <span className="text-orange-300">"https://www.linkedin.com/in/danmcode/"</span>;
+                        {"\n"}
+                        <span className="text-gray-400">// Puedes visitarme en mi LinkedIn</span>
+                        {"\n"}
+                        <span className="text-blue-400">const</span>
+                        <span className="text-green-400">linkedInPage</span>
+                        <span className="text-white">=</span>
+                        <a
+                            href="https://www.linkedin.com/in/danmcode/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-orange-300 underline underline-offset-2 hover:text-green-400"
+                        >
+                            https://www.linkedin.com/in/danmcode/
+                        </a>
+                        ;
                     </code>
                 </pre>
             </div>
