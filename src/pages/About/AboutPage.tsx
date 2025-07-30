@@ -122,8 +122,23 @@ export const AboutPage = () => {
                         <code>
                             <span className="text-gray-400">/**</span>{"\n"}
                             <span className="text-gray-400"> * [Contacto]</span>{"\n"}
-                            <span className="text-gray-400"> * Email: danmcode@gmail.com</span>{"\n"}
-                            <span className="text-gray-400"> * Telefono: +57 3108903571</span>{"\n"}
+                            <span className="text-gray-400"> * Email: <a
+                                href="mailto:%22Daniel%20Muelas%20Rivera%22%20<danmcode@gmail.com>?subject=Contacto%20desde%20tu%20portfolio"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-gray-400 underline underline-offset-2 hover:text-green-400"
+                            >
+                                danmcode@gmail.com
+                            </a></span>{"\n"}
+
+                            <span className="text-gray-400"> * Telefono: <a
+                                href="https://wa.me/573108903571"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-gray-400 underline underline-offset-2 hover:text-green-400"
+                            >
+                                3108903571
+                            </a>;</span>{"\n"}
                             <span className="text-gray-400"> */</span>{"\n"}
                         </code>
                     </pre>
