@@ -15,3 +15,23 @@
     --gray-800: #1F2937;
     --blue-950: #080A1A;
 }
+
+.custom-scrollbar::-webkit-scrollbar {
+    width: 4px;
+    height: 5px;
+    margin: 1px
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: #2D3748;
+    border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #4A5568;
+    border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #A0AEC0;
+}

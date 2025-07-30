@@ -58,37 +58,59 @@ export const ProjectsPage: React.FC = () => {
 
         return (
             <div className="flex flex-col h-full">
+
                 <Text variant="h3" className="text-xl font-semibold text-white mb-2">
-                    // Project {project.id}
+                    Proyecto:  {project.id}
                 </Text>
-                <pre className="text-sm leading-relaxed text-gray-300 overflow-y-auto flex-grow">
+
+                <pre className="custom-scrollbar overflow-x-auto text-sm leading-relaxed text-gray-300 overflow-y-auto flex-grow">
                     <code>
                         <span className="text-gray-400">/**</span>{"\n"}
                         <span className="text-gray-400"> * {project.title}</span>{"\n"}
-                        <span className="text-gray-400"> *</span>{"\n"}
+                        <span className="text-gray-400"> * </span>{"\n"}
+
                         {project.fullDescription.trim().split('\n').map((line, index) => (
                             <React.Fragment key={index}>
                                 <span className="text-gray-400"> * {line.trim()}</span>{"\n"}
                             </React.Fragment>
                         ))}
+
                         <span className="text-gray-400"> */</span>{"\n"}
                         {"\n"}
-                        <span className="text-blue-400">const</span> <span className="text-green-400">technologiesUsed</span> <span className="text-white">=</span> <span className="text-orange-300">[{project.technologies.map(tech => `"${tech}"`).join(', ')}]</span>;{"\n"}
-                        <span className="text-blue-400">const</span> <span className="text-green-400">githubRepo</span> <span className="text-white">=</span> <span className="text-orange-300">"{project.githubLink}"</span>;{"\n"}
+                        <span className="text-blue-400">const </span>
+                        <span className="text-green-400">technologiesUsed </span>
+
+                        <span className="text-white">=</span> <span className="text-orange-300">
+                            [{project.technologies.map(tech => `"${tech}"`).join(', ')}]
+                        </span>;{"\n"}
+
+                        <span className="text-blue-400">const </span>
+                        <span className="text-green-400">githubRepo </span>
+                        <span className="text-white">=</span>
+                        <span className="text-orange-300"> "{project.githubLink}"</span>;{"\n"}
                         {"\n"}
-                        <span className="text-gray-400">// Screenshots:</span>{"\n"}
-                        {project.screenshots.map((screenshot, index) => (
-                            <React.Fragment key={index}>
-                                <span className="text-gray-400">// {screenshot}</span>{"\n"}
-                            </React.Fragment>
-                        ))}
+
+                        {project.screenshots.length > 0 && (
+
+                            project.screenshots.map((screenshot, index) => (
+                                <React.Fragment key={index}>
+                                    <span className="text-gray-400">// Screenshots:</span>{"\n"}
+                                    <span className="text-gray-400">// {screenshot}</span>{"\n"}
+                                </React.Fragment>
+                            ))
+
+                        )}
                     </code>
                 </pre>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-                    {project.screenshots.map((src, index) => (
-                        <img key={index} src={src} alt={`Screenshot ${index + 1}`} className="rounded-md" />
-                    ))}
+                    {
+                        project.screenshots.length > 0 && (
+                            project.screenshots.map((src, index) => (
+                                <img key={index} src={src} alt={`Screenshot ${index + 1}`} className="rounded-md" />
+                            ))
+                        )
+                    }
                 </div>
             </div>
         );
@@ -108,7 +130,7 @@ export const ProjectsPage: React.FC = () => {
                    w-full text-left py-2 px-3 rounded-md text-sm font-medium flex items-center
                   ${activeTab === project.id ? 'bg-gray-700 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'}
                   transition-colors duration-200
-                  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500
+                  focus:outline-none
                 `}
                                 aria-current={activeTab === project.id ? 'page' : undefined}
                             >
@@ -132,7 +154,7 @@ export const ProjectsPage: React.FC = () => {
                 border-r border-gray-700
                 ${activeTab === tabId ? 'bg-gray-700 text-white' : 'text-gray-400 hover:bg-gray-700 hover:text-white'}
                 transition-colors duration-200
-                focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500
+                focus:outline-none
                 whitespace-nowrap
               `}
                             aria-selected={activeTab === tabId}
@@ -142,7 +164,7 @@ export const ProjectsPage: React.FC = () => {
                             {openTabs.length > 0 && (
                                 <button
                                     onClick={(e) => handleCloseTab(tabId, e)}
-                                    className="ml-2 p-1 rounded-full hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                                    className="ml-2 p-1 rounded-full hover:bg-gray-600 focus:outline-none"
                                     aria-label={`Cerrar pestaña ${tabId}`}
                                 >
                                     <XMarkIcon className="h-4 w-4 text-gray-400 hover:text-white" />

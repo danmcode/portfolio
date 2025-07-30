@@ -1,5 +1,3 @@
-// src/pages/About/AboutPage.tsx
-
 import React, { useState, useEffect } from 'react';
 import { Text } from '../../components/atoms/Text'; // Necesitaremos Text para el contenido
 import { XMarkIcon } from '@heroicons/react/24/outline'; // Importamos el icono de cierre desde Heroicons
@@ -51,7 +49,7 @@ export const AboutPage = () => {
             case 'bio':
                 return (
                     <>
-                        <pre className="text-sm leading-relaxed">
+                        <pre className="text-sm leading-relaxed custom-scrollbar overflow-x-auto">
                             <code>
                                 <span className="text-gray-400">/**</span>{"\n"}
                                 <span className="text-gray-400"> * Acerca de Daniel Muelas</span>{"\n"}
@@ -90,7 +88,7 @@ export const AboutPage = () => {
                 );
             case 'interests':
                 return (
-                    <pre className="text-sm leading-relaxed">
+                    <pre className="text-sm leading-relaxed custom-scrollbar overflow-x-auto">
                         <code>
                             <span className="text-gray-400">/**</span>{"\n"}
                             <span className="text-gray-400"> * [Intereses personales]</span>{"\n"}
@@ -107,7 +105,7 @@ export const AboutPage = () => {
                 );
             case 'education':
                 return (
-                    <pre className="text-sm leading-relaxed">
+                    <pre className="text-sm leading-relaxed custom-scrollbar overflow-x-auto">
                         <code>
                             <span className="text-gray-400">/**</span>{"\n"}
                             <span className="text-gray-400"> * [Diploma] Ingeniería en Informatica en "Univiversidad Autonoma de Occidente"</span>{"\n"}
@@ -163,7 +161,7 @@ export const AboutPage = () => {
             </aside>
 
             <div className="flex-grow bg-gray-800 rounded-lg overflow-hidden flex flex-col">
-                <div className="flex border-b border-gray-700 overflow-x-auto">
+                <div className="flex border-b border-gray-700 overflow-x-auto custom-scrollbar">
                     {openTabs.map((tabId) => (
                         <button
                             key={tabId}
@@ -173,8 +171,7 @@ export const AboutPage = () => {
                 border-r border-gray-700
                 ${activeTab === tabId ? 'bg-gray-700 text-white' : 'text-gray-400 hover:bg-gray-700 hover:text-white'}
                 transition-colors duration-200
-                focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500
-                whitespace-nowrap // Evita que el texto de la pestaña se rompa en varias líneas
+                whitespace-nowrap
               `}
                             aria-selected={activeTab === tabId}
                             role="tab"
@@ -183,7 +180,7 @@ export const AboutPage = () => {
                             {openTabs.length > 1 && (
                                 <button
                                     onClick={(e) => handleCloseTab(tabId, e)}
-                                    className="ml-2 p-1 rounded-full hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                                    className="ml-2 p-1 rounded-full hover:bg-gray-600 focus:outline-none"
                                     aria-label={`Cerrar pestaña ${tabId}`}
                                 >
                                     <XMarkIcon className="h-4 w-4 text-gray-400 hover:text-white" />

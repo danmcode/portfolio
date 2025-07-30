@@ -12,19 +12,33 @@ export const projectsData: ProjectData[] = [
     {
         id: 'danmcode-portfolio',
         title: 'Project 1 // danmcode-portfolio',
-        description: 'Cómo primer proyecto hemos realizado una página para mostrar nuestro portafolio.',
-        githubLink: 'https://github.com/daveinthahood/justeat-clone',
-        fullDescription: `Para uno de mis proyectos personales, desarrollé un portafolio web moderno y responsive 
-        donde presento mi experiencia, habilidades y proyectos. 
-        Este sitio fue construido desde cero con buenas prácticas como:
+        description: 'Desarrollé un sitio web moderno y responsivo para presentar mi portafolio profesional.',
+        githubLink: 'https://github.com/danmcode/portfolio',
+        fullDescription: `Este proyecto representa la primera versión de mi portafolio profesional, diseñado y desarrollado desde cero con un enfoque en escalabilidad, mantenibilidad y experiencia de usuario. 
 
-            - Estructura modular de carpetas,
-            - Componentes reutilizables con Atomic Design,
-            - Estilos con Tailwind CSS optimizados,
-            - Accesibilidad (a11y) básica para navegación con teclado y screen readers,
-            - Tipado estricto usando TypeScript y control de rutas con React Router.
-    `,
-        technologies: ['HTML', 'CSS', 'TaildWind CSS', 'Typescript'],
+El objetivo principal fue crear una plataforma clara y funcional para mostrar quién soy como desarrollador, mis habilidades técnicas, experiencia y proyectos destacados.
+
+Entre las características clave del desarrollo se incluyen:
+
+- Arquitectura modular basada en el patrón Atomic Design,
+- Componentes reutilizables para facilitar el mantenimiento y escalado,
+- Estilos limpios y eficientes con Tailwind CSS,
+- Buenas prácticas de accesibilidad (a11y) para usuarios con tecnologías de asistencia,
+- Navegación fluida utilizando React Router,
+- Código robusto y bien tipado con TypeScript,
+- Integración continua con GitHub Actions para despliegues automáticos.
+
+Este portafolio no solo muestra mi trabajo, sino también mi enfoque profesional al construir aplicaciones modernas con tecnologías actuales.`,
+        technologies: [
+            'HTML',
+            'CSS',
+            'Tailwind CSS',
+            'TypeScript',
+            'React',
+            'React Router',
+            'Git',
+            'GitHub Actions'
+        ],
         screenshots: [],
     }
 ];

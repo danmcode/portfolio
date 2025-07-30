@@ -42,7 +42,7 @@ export const NavItem = ({
             py-2 px-3 rounded-md text-sm font-medium flex items-center
             ${isActive ? 'bg-gray-700 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'}
             transition-colors duration-200
-            focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500
+            focus:outline-none
           `}
             aria-current={isActive ? 'page' : undefined}
         >
