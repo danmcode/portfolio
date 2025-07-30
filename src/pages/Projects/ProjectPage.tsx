@@ -13,7 +13,7 @@ import { projectsData } from '../../data/ProjectsData';
 export const ProjectsPage: React.FC = () => {
     const [openTabs, setOpenTabs] = useState<string[]>([]);
 
-    const [activeTab, setActiveTab] = useState<string>('');
+    const [activeTab, setActiveTab] = useState<string>('danmcode-portfolio');
 
     const handleViewProject = (projectId: string) => {
         if (!openTabs.includes(projectId)) {
@@ -122,20 +122,20 @@ export const ProjectsPage: React.FC = () => {
                 <h3 className="text-lg font-semibold text-white mb-4">projects</h3>
 
                 <ul className="space-y-2 text-gray-300">
+
                     {projectsData.map((project) => (
                         <li key={project.id}>
                             <button
                                 onClick={() => handleViewProject(project.id)}
-                                className={`
-                   w-full text-left py-2 px-3 rounded-md text-sm font-medium flex items-center
-                  ${activeTab === project.id ? 'bg-gray-700 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'}
-                  transition-colors duration-200
-                  focus:outline-none
-                `}
+                                className={`w-full text-left py-2 px-3 rounded-md text-sm font-medium flex items-center
+                                    ${activeTab === project.id
+                                        ? 'bg-gray-700 text-white'
+                                        : 'text-gray-300 hover:bg-gray-700 hover:text-white'
+                                    } transition-colors duration-200 focus:outline-none`}
+
                                 aria-current={activeTab === project.id ? 'page' : undefined}
                             >
-                                <span className="text-orange-500 mr-2">&gt;</span>
-                                {project.id}
+                                <span className="text-orange-500 mr-2">&gt;</span> {project.id}
                             </button>
                         </li>
                     ))}
