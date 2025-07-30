@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Navbar } from '../../molecules/Navbar';
-import { Link } from '../../atoms/Link';
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import { ArrowDownTrayIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import danmcodeIcom from '../../../assets/icons/damncode-logo.png';
+import danmcodeCv from '../../../assets/cv/cv_1144097956_dmuelas.pdf';
 
 /**
  * Header Component (Organism)
@@ -31,18 +31,23 @@ export const Header: React.FC = () => {
     };
 
     return (
-        <header className="w-full items-stretch px-4 sm:px-6 lg:px-8 bg-[var(--dark-blue)] border-b border-gray-700 sticky top-0 z-50 h-full">
+        <header className="w-full items-stretch bg-[var(--dark-blue)] border-b border-gray-700 sticky top-0 z-50 h-full">
 
-            <div className="flex items-stretch justify-between">
-                <div className="flex items-center px-4 border-r border-gray-700 flex-shrink-0 min-w-0">
-                    <h1 className="text-lg font-bold text-white whitespace-nowrap overflow-hidden text-ellipsis">
-                        <img src={danmcodeIcom} alt="Protecnica" width={80} />
-                    </h1>
+            <div className="flex items-stretch justify-between w-full">
+                <div className="flex items-center px-2 border-r border-gray-700 flex-shrink-0">
+                    <div className="text-lg font-bold text-white whitespace-nowrap overflow-hidden text-ellipsis m-2">
+                        <img
+                            src={danmcodeIcom}
+                            alt="Protecnica"
+                            width={80}
+                            className='max-w-[80px] h-auto'
+                        />
+                    </div>
                 </div>
 
                 <button
                     onClick={toggleMobileMenu}
-                    className="lg:hidden text-gray-400 hover:text-white"
+                    className="lg:hidden text-gray-400 hover:text-white px-4"
                     aria-label={isMobileMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
                     aria-expanded={isMobileMenuOpen}
                 >
@@ -58,23 +63,38 @@ export const Header: React.FC = () => {
                 </div>
 
                 <div className="hidden h-full lg:flex lg:items-center lg:px-4 lg:py-2 lg:flex-shrink-0 lg:min-w-0">
-                    <Link
-                        href="#contact-me"
-                        variant="tab"
-                        className="!border-r-0 !px-0 !py-0"
+                    <a
+                        className="
+                            inline-flex
+                            items-center
+                            gap-1
+                            bg-[#1A202C]
+                            text-white
+                            font-mono
+                            p-2
+                            rounded-full
+                            hover:bg-[#18AA80]
+                            hover:font-bold
+                            transition-colors
+                            duration-300
+                            border
+                            text-sm
+                            cursor-pointer
+                            border-[#18AA80]"
+                        href={danmcodeCv}
+                        download="cv_daniel_muelas.pdf"
                     >
-                        _contact-me
-                    </Link>
+                        <ArrowDownTrayIcon className="w-4 h-4 text-white" />
+                        download_cv
+                    </a>
                 </div>
+
             </div>
 
             {isMobileMenuOpen && (
-                <div className="lg:hidden flex flex-col bg-gray-800 border-t border-gray-700
-                        absolute w-full left-0 transition-all duration-300 ease-in-out top-full z-40">
+                <div className="lg:hidden flex flex-col bg-[#1A202C] border-t border-gray-700 absolute w-full left-0 transition-all duration-300 ease-in-out top-full z-40">
 
-                    <div className="py-4">
-                        <Navbar activeSection={activeSection} isMobileView={true} />
-                    </div>
+                    <Navbar activeSection={activeSection} isMobileView={true} />
 
                     <div className="py-4 px-4 text-center border-t border-gray-700">
                         <button>
