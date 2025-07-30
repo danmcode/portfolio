@@ -21,22 +21,6 @@ export const WorkExperienceStepper: React.FC<Props> = ({ data, title = '// exper
             className={`relative max-h-[550px] overflow-y-auto p-6 bg-gray-800 rounded-xl shadow-lg shadow-brand-green/20 custom-scrollbar
         [mask-image:linear-gradient(to_top,transparent_0%,black_15%,black_20%,black_30%)] ${className}`}
         >
-            <style>{`
-        .custom-scrollbar::-webkit-scrollbar {
-          width: 8px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-track {
-          background: #2D3748;
-          border-radius: 10px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-thumb {
-          background: #4A5568;
-          border-radius: 10px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-          background: #A0AEC0;
-        }
-      `}</style>
             <pre>
                 <Text variant="h3" className="text-2xl font-bold text-white mb-6">
                     {title}

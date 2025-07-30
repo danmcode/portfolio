@@ -30,7 +30,7 @@ export const HeroSection: React.FC = () => {
                     &gt; Desarrollador Web FullStack
                 </Text>
 
-                <pre className="bg-gray-800 p-4 rounded-lg text-sm leading-relaxed max-w-full overflow-x-auto">
+                <pre className="custom-scrollbar overflow-auto bg-gray-800 p-4 rounded-lg text-sm leading-relaxed max-w-full overflow-x-auto">
                     <code className="language-typecript">
                         <span className="text-gray-400">// mi número de teléfono</span>{"\n"}
                         <span className="text-blue-400">const </span>
