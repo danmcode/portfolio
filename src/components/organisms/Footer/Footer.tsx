@@ -1,7 +1,6 @@
 import { Link } from '../../atoms/Link';
-
+import { FaEnvelope, FaGithub, FaLinkedin } from 'react-icons/fa';
 import {
-    CodeBracketIcon,
     EnvelopeIcon,
     ArrowTopRightOnSquareIcon
 } from '@heroicons/react/24/outline';
@@ -35,33 +34,33 @@ export const Footer = () => {
         >
             <div> <p>&copy; 2025 Danmcode. All rights reserved.</p></div>
 
-            <div className="flex space-x-4">
-                <Link
+            <div className="flex mt-2 space-x-5">
+                <a
                     href="https://github.com/danmcode"
+                    target='blank'
                     className="hover:text-white transition-colors duration-200"
                     aria-label="GitHub Profile"
-                    variant="tab"
                 >
-                    <CodeBracketIcon className="h-6 w-6" />
-                </Link>
+                    <FaGithub className="h-6 w-6" />
+                </a>
 
-                <Link
+                <a
                     href="https://www.linkedin.com/in/danmcode/"
+                    target='blank'
                     className="hover:text-white transition-colors duration-200"
                     aria-label="LinkedIn Profile"
-                    variant="tab"
                 >
-                    <ArrowTopRightOnSquareIcon className="h-6 w-6" />
-                </Link>
+                    <FaLinkedin className="h-6 w-6" />
+                </a>
 
-                <Link
+                <a
                     href="mailto:danmcode@gmail.com"
+                    target='blank'
                     className="hover:text-white transition-colors duration-200"
                     aria-label="Send email"
-                    variant="tab"
                 >
-                    <EnvelopeIcon className="h-6 w-6" />
-                </Link>
+                    <FaEnvelope className="h-6 w-6" />
+                </a>
             </div>
         </footer>
     );
