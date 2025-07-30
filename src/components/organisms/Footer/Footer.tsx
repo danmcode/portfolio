@@ -19,8 +19,8 @@ export const Footer = () => {
         bg-[var(--dark-blue)]
         border
         border-gray-700 
-        py-0 
-        px-4 
+        py-2
+        px-2
         sm:px-6 
         lg:px-8 
         flex 

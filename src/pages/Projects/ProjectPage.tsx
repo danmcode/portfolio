@@ -11,8 +11,7 @@ import { projectsData } from '../../data/ProjectsData';
  * abre una pestaña en un "editor de código" simulado con los detalles del proyecto.
  */
 export const ProjectsPage: React.FC = () => {
-    const [openTabs, setOpenTabs] = useState<string[]>([]);
-
+    const [openTabs, setOpenTabs] = useState<string[]>(['danmcode-portfolio']);
     const [activeTab, setActiveTab] = useState<string>('danmcode-portfolio');
 
     const handleViewProject = (projectId: string) => {
