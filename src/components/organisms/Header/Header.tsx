@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Navbar } from '../../molecules/Navbar';
-import { ArrowDownTrayIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import danmcodeIcom from '../../../assets/icons/damncode-logo.png';
-import danmcodeCv from '../../../assets/cv/cv_1144097956_dmuelas.pdf';
+import { DownloadCVButton } from '../../atoms/Button/DownloadCVButton';
 
 /**
  * Header Component (Organism)
@@ -63,30 +63,7 @@ export const Header: React.FC = () => {
                 </div>
 
                 <div className="hidden h-full lg:flex lg:items-center lg:px-4 lg:py-2 lg:flex-shrink-0 lg:min-w-0">
-                    <a
-                        className="
-                            inline-flex
-                            items-center
-                            gap-1
-                            bg-[#1A202C]
-                            text-white
-                            font-mono
-                            p-2
-                            rounded-full
-                            hover:bg-[#18AA80]
-                            hover:font-bold
-                            transition-colors
-                            duration-300
-                            border
-                            text-sm
-                            cursor-pointer
-                            border-[#18AA80]"
-                        href={danmcodeCv}
-                        download="cv_daniel_muelas.pdf"
-                    >
-                        <ArrowDownTrayIcon className="w-4 h-4 text-white" />
-                        download_cv
-                    </a>
+                    <DownloadCVButton />
                 </div>
 
             </div>
@@ -97,9 +74,7 @@ export const Header: React.FC = () => {
                     <Navbar activeSection={activeSection} isMobileView={true} />
 
                     <div className="py-4 px-4 text-center border-t border-gray-700">
-                        <button>
-                            download_cv
-                        </button>
+                        <DownloadCVButton />
                     </div>
                 </div>
             )}
