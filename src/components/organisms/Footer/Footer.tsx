@@ -1,9 +1,4 @@
-import { Link } from '../../atoms/Link';
 import { FaEnvelope, FaGithub, FaLinkedin } from 'react-icons/fa';
-import {
-    EnvelopeIcon,
-    ArrowTopRightOnSquareIcon
-} from '@heroicons/react/24/outline';
 
 /**
  * Footer Component (Organism)

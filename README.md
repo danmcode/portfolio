@@ -1,69 +1,97 @@
-# React + TypeScript + Vite
+# 🧑‍💻 Portafolio de Daniel Muelas
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este repositorio contiene mi **portafolio personal de proyectos** como desarrollador de software. Aquí presento soluciones reales, ideas experimentales y herramientas que he desarrollado usando mi stack favorito: **React, TypeScript, Tailwind CSS, Node.js y Docker**.
 
-Currently, two official plugins are available:
+Mi objetivo con este portafolio es compartir mi crecimiento, estilo de desarrollo y pasión por crear cosas útiles, limpias y bien pensadas.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 ¿Cómo levantar este proyecto?
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Sigue estos pasos para ejecutar el portafolio en tu entorno local:
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### 1. Clonar el repositorio
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+git clone https://github.com/danmcode/tu-repo-aqui.git
+cd tu-repo-aqui
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 2. Instalar dependencias
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Con pnpm (recomendado):
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+pnpm install
 ```
+
+O con npm:
+
+```bash
+npm install
+```
+
+### 3. Levantar el servidor de desarrollo
+
+```bash
+pnpm dev
+```
+
+o
+
+```bash
+npm run dev
+```
+
+Luego abre tu navegador en:
+
+```
+http://localhost:5173
+```
+
+---
+
+## 📦 Scripts disponibles
+
+```json
+"scripts": {
+  "dev": "vite",                         // Inicia el servidor de desarrollo
+  "build": "tsc -b && vite build",      // Compila TypeScript y construye la versión de producción
+  "lint": "eslint .",                   // Ejecuta ESLint para validar el código
+  "preview": "vite preview",            // Previsualiza el build antes de producción
+  "deploy": "vite build && gh-pages -d dist" // Construye y despliega en GitHub Pages
+}
+```
+
+---
+
+## ✨ ¿Qué encontrarás en este portafolio?
+
+- Proyectos reales desarrollados con React, Node.js y PostgreSQL.
+- Automatizaciones útiles y herramientas para el día a día.
+- Experimentos personales para aprender nuevas tecnologías.
+- Capturas, descripciones y enlaces para ver cada uno en acción.
+
+---
+
+## 🧠 Stack principal
+
+- ⚛️ React + Vite + TypeScript
+- 🎨 Tailwind CSS
+- 🐘 PostgreSQL
+- 🐳 Docker
+- 🧪 TDD + Testing Library
+- 💻 Linux + CLI tools
+
+---
+
+## 📬 Contacto
+
+Si te interesa lo que hago, ¡hablemos!
+
+📧 danmcode@gmail.com  
+🔗 [LinkedIn](https://www.linkedin.com/in/danmcode)
+
+---
+
+> “Nunca dejes de aprender, nunca dejes de construir.” 🚀

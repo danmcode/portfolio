@@ -56,7 +56,7 @@ export const ProjectsPage: React.FC = () => {
         }
 
         return (
-            <div className="flex flex-col h-full">
+            <div className="custom-scrollbar overflow-x-auto overflow-y-auto flex flex-col h-full max-h-[500px]">
 
                 <Text variant="h3" className="text-xl font-semibold text-white mb-2">
                     Proyecto:  {project.id}
@@ -116,11 +116,11 @@ export const ProjectsPage: React.FC = () => {
     };
 
     return (
-        <section id="projects" className="h-full flex flex-col lg:flex-row gap-8 lg:gap-12 py-8 md:py-12">
-            <aside className="w-full lg:w-1/4 bg-gray-800 p-4 rounded-lg flex-shrink-0">
+        <section id="projects" className="h-full  flex flex-col lg:flex-row gap-8 lg:gap-12 py-8 md:py-12">
+            <aside className="w-full lg:w-1/4 bg-gray-800 p-4 rounded-lg flex-shrink-0 ">
                 <h3 className="text-lg font-semibold text-white mb-4">projects</h3>
 
-                <ul className="space-y-2 text-gray-300">
+                <ul className="space-y-2 text-gray-300 custom-scrollbar overflow-x-auto overflow-y-auto">
 
                     {projectsData.map((project) => (
                         <li key={project.id}>
@@ -143,7 +143,7 @@ export const ProjectsPage: React.FC = () => {
 
             <div className="flex-grow bg-gray-800 rounded-lg overflow-hidden flex flex-col">
 
-                <div className="flex border-b border-gray-700 overflow-x-auto">
+                <div className="flex border-b border-gray-700 overflow-x-auto custom-scrollbar overflow-y-auto">
                     {openTabs.map((tabId) => (
                         <button
                             key={tabId}

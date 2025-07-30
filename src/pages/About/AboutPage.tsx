@@ -62,28 +62,41 @@ export const AboutPage = () => {
                                 <span className="text-orange-300">`</span>
                                 {"\n"}
                                 <span className="text-orange-300">
-                                    {"  "}Soy Daniel Muelas, nací en 1997 y desde siempre he sido un curioso de la tecnología.
+                                    {"  "}Soy Daniel Muelas, nací en 1997 y siempre he sido un apasionado de la tecnología.
                                 </span>
                                 {"\n"}
                                 <span className="text-orange-300">
-                                    {"  "}Estudié Ingeniería Informática y trabajo con React, Node.js, TypeScript y Docker.
+                                    {"  "}Estudié Ingeniería Informática y actualmente trabajo como desarrollador Full Stack.
                                 </span>
                                 {"\n"}
                                 <span className="text-orange-300">
-                                    {"  "}Me encanta Linux, automatizar procesos, construir soluciones útiles
+                                    {"  "}Mi stack principal incluye React, Node.js, TypeScript y Docker, aunque también disfruto
                                 </span>
                                 {"\n"}
                                 <span className="text-orange-300">
-                                    {"  "}y aprender cada día en este mundo que cambia tan rápido.
+                                    {"  "}explorar nuevas herramientas y buenas prácticas del ecosistema JavaScript.
                                 </span>
                                 {"\n"}
                                 <span className="text-orange-300">
-                                    {"  "}Creo en el poder de la comunidad, el código limpio y en nunca dejar de crecer.
+                                    {"  "}Soy fan de Linux, la automatización, el código limpio y crear soluciones útiles que resuelvan problemas reales.
+                                </span>
+                                {"\n"}
+                                <span className="text-orange-300">
+                                    {"  "}Creo en la mejora continua, en compartir conocimiento y en el poder de la comunidad tech.
+                                </span>
+                                {"\n"}
+                                <span className="text-orange-300">
+                                    {"  "}Cuando no estoy programando, me gusta aprender, escuchar música y desarmar cosas (a veces funcionan después 😅).
+                                </span>
+                                {"\n"}
+                                <span className="text-orange-300">
+                                    {"  "}Mi meta: nunca dejar de aprender, nunca dejar de construir.
                                 </span>
                                 {"\n"}
                                 <span className="text-orange-300">`</span>;
                             </code>
                         </pre>
+
                     </>
                 );
             case 'interests':
