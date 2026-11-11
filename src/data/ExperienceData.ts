@@ -1,4 +1,4 @@
-import type { ExperienceEntry } from "../components/molecules/WorkExperienceStepper/WorkExperienceStepper";
+import type { ExperienceEntry } from "../types";
 
 export const experienceData: ExperienceEntry[] = [
     {
@@ -24,7 +24,7 @@ export const experienceData: ExperienceEntry[] = [
         title: 'Coordinador de Tecnología',
         company: 'Coordinadora de Tecnología',
         duration: 'Enero 2023 - Agosto 2023',
-        description: `// Mantenimiento de servicios de red y soporte a usuarios finales.,
+        description: `// Mantenimiento de servicios de red y soporte a usuarios finales.
 // Gestión de dispositivos como impresoras, cámaras y UPS.`,
     },
     {

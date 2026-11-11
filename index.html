@@ -1,11 +1,25 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="src/assets/icons/damncode.ico" />
+  <link rel="icon" type="image/x-icon" href="src/assets/icons/damncode.ico" />
+  <meta name="description" content="Portafolio de Daniel Muelas, desarrollador web Full Stack (React, TypeScript, Node.js)." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>.:: Danmcode ::.</title>
+  <script>
+    // Restaura la ruta enviada por public/404.html (redirección SPA en GitHub Pages).
+    (function () {
+      var params = new URLSearchParams(location.search);
+      var path = params.get('p');
+      if (path) {
+        history.replaceState(null, '', '/portfolio' + path + location.hash);
+      }
+    })();
+  </script>
 </head>
 
 <body>

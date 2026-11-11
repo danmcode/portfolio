@@ -1,7 +1,6 @@
 import { Link } from '../../atoms/Link';
 
 interface NavbarProps {
-    activeSection: string;
     isMobileView?: boolean;
 }
 
@@ -16,17 +15,18 @@ export const Navbar = ({
     isMobileView = false
 }: NavbarProps) => {
     const navLinks = [
-        { name: '_hola 👋', href: 'hello' },
-        { name: '_sobre-mí', href: 'about-me' },
-        { name: '_proyectos', href: 'projects' },
+        { name: '_hola 👋', href: '/', end: true },
+        { name: '_sobre-mí', href: '/about-me', end: false },
+        { name: '_proyectos', href: '/projects', end: false },
     ];
 
     return (
-        <nav className={`flex ${isMobileView ? 'flex-col' : ''} overflow-x-auto h-full`}>
+        <nav aria-label="Navegación principal" className={`flex ${isMobileView ? 'flex-col' : ''} overflow-x-auto h-full`}>
             {navLinks.map((link) => (
                 <Link
                     key={link.name}
                     href={link.href}
+                    end={link.end}
                     variant={isMobileView ? 'default' : 'tab'}
                     className={isMobileView ? 'block w-full px-4 py-2 text-lg' : 'border-r border-gray-700'}
                 >

@@ -1,16 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 
 <head>
     <meta charset="UTF-8" />
-    <title>Redirecting...</title>
+    <title>Redirigiendo...</title>
+    <script>
+        // GitHub Pages sirve este archivo para cualquier ruta desconocida (ej: /portfolio/projects).
+        // Mandamos la ruta original como query param a index.html, que la restaura
+        // antes de que cargue React Router.
+        var base = '/portfolio';
+        var path = location.pathname.slice(base.length) || '/';
+        location.replace(base + '/?p=' + encodeURIComponent(path + location.search) + location.hash);
+    </script>
 </head>
 
-<body>
-    <script>
-        var redirectTo = location.pathname.replace(/\/portfolio/, '') || '/';
-        location.replace('/portfolio' + redirectTo);
-    </script>
-</body>
+<body></body>
 
 </html>

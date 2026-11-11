@@ -1,12 +1,4 @@
-export interface ProjectData {
-    id: string;
-    title: string;
-    description: string;
-    githubLink: string;
-    fullDescription: string;
-    technologies: string[];
-    screenshots: string[];
-}
+import type { ProjectData } from "../types";
 
 export const projectsData: ProjectData[] = [
     {
@@ -28,7 +20,7 @@ mis habilidades técnicas, experiencia y proyectos destacados.
 - Buenas prácticas de accesibilidad (a11y) para usuarios con tecnologías de asistencia,
 - Navegación fluida utilizando React Router,
 - Código robusto y bien tipado con TypeScript,
-- Integración continua con GitHub Actions para despliegues automáticos.
+- Integración continua con GitHub Actions (lint y build en cada push) y despliegue en GitHub Pages.
 
 Este portafolio no solo muestra mi trabajo, sino también mi enfoque profesional 
 al construir aplicaciones modernas con tecnologías actuales.`,

@@ -6,6 +6,8 @@ interface LinkProps {
     children: React.ReactNode;
     className?: string;
     variant?: 'default' | 'tab';
+    /** Solo marca el link como activo si la ruta coincide exactamente. */
+    end?: boolean;
     onClick?: (event: React.MouseEvent<HTMLAnchorElement>) => void;
 }
 
@@ -21,17 +23,21 @@ interface LinkProps {
  * @param {React.ReactNode} props.children - The content of the link.
  * @param {string} [props.className] - Additional Tailwind classes for customization.
  * @param {'default' | 'tab'} [props.variant='default'] - The style variant of the link.
+ * @param {boolean} [props.end=false] - Only mark as active on an exact route match.
  * @param {function} [props.onClick] - Optional callback function for click events.
  */
-export const Link: React.FC<LinkProps> = ({ href, children, className, variant = 'default', onClick }: LinkProps) => {
+export const Link: React.FC<LinkProps> = ({ href, children, className, variant = 'default', end = false, onClick }: LinkProps) => {
 
     return (
         <NavLink
             to={href}
+            end={end}
             className={({ isActive }) => {
                 const base = `transition-colors duration-200 focus:outline-none h-full`;
 
-                const defaultStyles = `text-gray-400 hover:text-white hover:underline px-3 py-2 rounded-md text-sm font-medium`;
+                const defaultStyles = isActive
+                    ? `text-white underline px-3 py-2 rounded-md text-sm font-medium`
+                    : `text-gray-400 hover:text-white hover:underline px-3 py-2 rounded-md text-sm font-medium`;
 
                 const tabStyles = isActive
                     ? `text-white border-r border-gray-700 border-b-2 border-b-[var(--green-danmcode)]`

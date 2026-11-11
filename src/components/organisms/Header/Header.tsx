@@ -1,33 +1,30 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import { Navbar } from '../../molecules/Navbar';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import danmcodeIcom from '../../../assets/icons/damncode-logo.png';
-import { DownloadCVButton } from '../../atoms/Button/DownloadCVButton';
+import { DownloadCVButton } from '../../atoms/Button';
+import { useMediaQuery } from '../../../hooks/useMediaQuery';
 
 /**
  * Header Component (Organism)
  *
  * Este componente representa el encabezado principal de la aplicación.
  * Contiene el nombre del portafolio y la barra de navegación con estilo de pestañas de editor.
- * Ahora adaptado con un menú de hamburguesa para pantallas pequeñas.
+ * Incluye un menú de hamburguesa para pantallas pequeñas.
  */
 export const Header: React.FC = () => {
-    const [activeSection, _] = useState<string>('hello');
-
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
+    const isDesktop = useMediaQuery('(min-width: 1024px)');
+    const { pathname } = useLocation();
 
+    // Cierra el menú móvil al pasar a escritorio o al cambiar de página.
     useEffect(() => {
-        const handleResize = () => {
-            if (window.innerWidth >= 1024) {
-                setIsMobileMenuOpen(false);
-            }
-        };
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
-    }, []);
+        setIsMobileMenuOpen(false);
+    }, [isDesktop, pathname]);
 
     const toggleMobileMenu = () => {
-        setIsMobileMenuOpen(!isMobileMenuOpen);
+        setIsMobileMenuOpen((isOpen) => !isOpen);
     };
 
     return (
@@ -38,7 +35,7 @@ export const Header: React.FC = () => {
                     <div className="text-lg font-bold text-white whitespace-nowrap overflow-hidden text-ellipsis m-2">
                         <img
                             src={danmcodeIcom}
-                            alt="Protecnica"
+                            alt="Logo de Danmcode"
                             width={80}
                             className='max-w-[80px] h-auto'
                         />
@@ -47,6 +44,7 @@ export const Header: React.FC = () => {
 
                 <button
                     onClick={toggleMobileMenu}
+                    aria-controls="mobile-menu"
                     className="lg:hidden text-gray-400 hover:text-white px-4"
                     aria-label={isMobileMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
                     aria-expanded={isMobileMenuOpen}
@@ -59,7 +57,7 @@ export const Header: React.FC = () => {
                 </button>
 
                 <div className="hidden h-full lg:flex-grow lg:h-full lg:flex lg:items-stretch lg:border-r lg:border-gray-700">
-                    <Navbar activeSection={activeSection} isMobileView={false} />
+                    <Navbar isMobileView={false} />
                 </div>
 
                 <div className="hidden h-full lg:flex lg:items-center lg:px-4 lg:py-2 lg:flex-shrink-0 lg:min-w-0">
@@ -69,9 +67,9 @@ export const Header: React.FC = () => {
             </div>
 
             {isMobileMenuOpen && (
-                <div className="lg:hidden flex flex-col bg-[#1A202C] border-t border-gray-700 absolute w-full left-0 transition-all duration-300 ease-in-out top-full z-40">
+                <div id="mobile-menu" className="lg:hidden flex flex-col bg-[#1A202C] border-t border-gray-700 absolute w-full left-0 transition-all duration-300 ease-in-out top-full z-40">
 
-                    <Navbar activeSection={activeSection} isMobileView={true} />
+                    <Navbar isMobileView={true} />
 
                     <div className="py-4 px-4 text-center border-t border-gray-700">
                         <DownloadCVButton />

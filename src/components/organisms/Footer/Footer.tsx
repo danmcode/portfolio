@@ -24,35 +24,35 @@ export const Footer = () => {
         items-center 
         text-gray-400 
         text-sm
-        bottom-0
         "
         >
-            <div> <p>&copy; 2025 Danmcode. All rights reserved.</p></div>
+            <div> <p>&copy; {new Date().getFullYear()} Danmcode. Todos los derechos reservados.</p></div>
 
             <div className="flex mt-2 space-x-5">
                 <a
                     href="https://github.com/danmcode"
-                    target='blank'
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="hover:text-white transition-colors duration-200"
-                    aria-label="GitHub Profile"
+                    aria-label="Perfil de GitHub"
                 >
                     <FaGithub className="h-6 w-6" />
                 </a>
 
                 <a
                     href="https://www.linkedin.com/in/danmcode/"
-                    target='blank'
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="hover:text-white transition-colors duration-200"
-                    aria-label="LinkedIn Profile"
+                    aria-label="Perfil de LinkedIn"
                 >
                     <FaLinkedin className="h-6 w-6" />
                 </a>
 
                 <a
                     href="mailto:danmcode@gmail.com"
-                    target='blank'
                     className="hover:text-white transition-colors duration-200"
-                    aria-label="Send email"
+                    aria-label="Enviar correo"
                 >
                     <FaEnvelope className="h-6 w-6" />
                 </a>

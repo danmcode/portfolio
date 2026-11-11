@@ -1,5 +1,12 @@
 @import "tailwindcss";
 
+/* Tokens expuestos a Tailwind: habilitan clases como text-brand-green, shadow-brand-green/20 y font-inter */
+@theme {
+    --color-brand-green: #00BCD4;
+    --color-green-danmcode: #18AA80;
+    --font-inter: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
 :root {
     --black-danmcode: #161616;
     --gray-danmcode: #292929;

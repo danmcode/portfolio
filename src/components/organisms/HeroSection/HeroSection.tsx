@@ -9,7 +9,7 @@ import { experienceData } from '../../../data/ExperienceData';
  * Este componente representa la sección principal de bienvenida en el portafolio.
  * Contiene el saludo, el nombre del desarrollador, el título y la información de contacto
  * simulando un bloque de código, y ahora una sección para la experiencia laboral.
- * Se han actualizado los colores para la marca personal y el layout a dos columnas.
+ * Usa un layout a dos columnas en pantallas grandes.
  */
 export const HeroSection: React.FC = () => {
     return (
@@ -31,7 +31,7 @@ export const HeroSection: React.FC = () => {
                 </Text>
 
                 <pre className="custom-scrollbar overflow-auto bg-gray-800 p-4 rounded-lg text-sm leading-relaxed max-w-full overflow-x-auto">
-                    <code className="language-typecript">
+                    <code className="language-typescript">
                         <span className="text-gray-400">// mi número de teléfono</span>{"\n"}
                         <span className="text-blue-400">const </span>
                         <span className="text-green-400">telephoneNum </span>
@@ -60,7 +60,7 @@ export const HeroSection: React.FC = () => {
                         </a>;
                         {"\n"}
                         {"\n"}
-                        <span className="text-gray-400">// También puedes visitar es mi GitHub</span>{"\n"}
+                        <span className="text-gray-400">// También puedes visitar mi GitHub</span>{"\n"}
                         <span className="text-blue-400">const </span>
                         <span className="text-green-400">githubLink </span>
                         <span className="text-white">= </span>
@@ -76,9 +76,9 @@ export const HeroSection: React.FC = () => {
                         {"\n"}
                         <span className="text-gray-400">// Puedes visitarme en mi LinkedIn</span>
                         {"\n"}
-                        <span className="text-blue-400">const</span>
-                        <span className="text-green-400">linkedInPage</span>
-                        <span className="text-white">=</span>
+                        <span className="text-blue-400">const </span>
+                        <span className="text-green-400">linkedInPage </span>
+                        <span className="text-white">= </span>
                         <a
                             href="https://www.linkedin.com/in/danmcode/"
                             target="_blank"
