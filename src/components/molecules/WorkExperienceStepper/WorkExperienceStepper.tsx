@@ -1,5 +1,4 @@
 import React from 'react';
-import { Text } from '../../atoms/Text';
 import type { ExperienceEntry } from '../../../types';
 
 interface Props {
@@ -8,38 +7,42 @@ interface Props {
     className?: string;
 }
 
-export const WorkExperienceStepper: React.FC<Props> = ({ data, title = '// experiencia laboral', className = '' }) => {
+/**
+ * WorkExperienceStepper Component (Molecule)
+ *
+ * Línea de tiempo de experiencia laboral, de la más reciente a la más antigua.
+ */
+export const WorkExperienceStepper: React.FC<Props> = ({ data, title = 'experiencia', className = '' }) => {
     return (
-        <div
-            className={`relative max-h-[550px] overflow-y-auto p-6 bg-gray-800 rounded-xl shadow-lg shadow-brand-green/20 custom-scrollbar
-        [mask-image:linear-gradient(to_top,transparent_0%,black_15%,black_20%,black_30%)] ${className}`}
+        <section
+            aria-labelledby="experience-title"
+            className={`p-5 sm:p-6 bg-gray-800 border border-gray-700 rounded-xl ${className}`}
         >
-            <div>
-                <Text variant="h3" className="text-2xl font-bold text-white mb-6">
-                    {title}
-                </Text>
+            <h2 id="experience-title" className="text-2xl font-bold text-white mb-6">
+                <span aria-hidden="true" className="font-mono text-brand-green">// </span>
+                {title}
+            </h2>
 
-                <ol aria-label="Experiencia laboral" className="relative border-s border-gray-700 text-gray-300 space-y-12 ps-4 mb-50">
-                    {data.map((entry) => (
-                        <li key={entry.id} className="ms-6">
-                            <span className="absolute flex items-center justify-center w-5 h-5 bg-white rounded-full -start-3 ring-4 ring-gray-900"></span>
+            <ol className="relative border-s border-gray-600 text-gray-300 space-y-8 ps-4">
+                {data.map((entry) => (
+                    <li key={entry.id} className="ms-4">
+                        <span aria-hidden="true" className="absolute w-3 h-3 bg-brand-green rounded-full -start-1.5 mt-2 ring-4 ring-gray-800"></span>
 
-                            <h3 className="font-semibold text-blue-400 text-lg">
-                                {entry.title}
-                            </h3>
-                            <p className="text-sm italic text-green-400 mb-2">
-                                {entry.company} – {entry.duration}
-                            </p>
-                            <pre className="text-sm leading-relaxed text-gray-400 whitespace-pre-wrap">
-                                <code>
-                                    {entry.description}
-                                </code>
-                            </pre>
-                        </li>
-                    ))}
-                </ol>
-            </div>
-        </div>
+                        <h3 className="font-semibold text-white text-lg">
+                            {entry.title}
+                        </h3>
+                        <p className="text-sm text-blue-300 mb-2">
+                            {entry.company} · <time>{entry.duration}</time>
+                        </p>
+                        {entry.highlights.length > 0 && (
+                            <ul className="list-disc ps-5 space-y-1 text-sm leading-relaxed text-gray-300">
+                                {entry.highlights.map((item) => <li key={item}>{item}</li>)}
+                            </ul>
+                        )}
+                    </li>
+                ))}
+            </ol>
+        </section>
     );
 };
 

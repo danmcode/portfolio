@@ -1,4 +1,5 @@
 import { ArrowDownTrayIcon } from "@heroicons/react/24/outline"
+// TODO: confirmar que el CV en PDF está actualizado con el contenido del portafolio.
 import danmcodeCv from '../../../assets/cv/cv_1144097956_dmuelas.pdf';
 
 export const DownloadCVButton = () => {
@@ -20,12 +21,16 @@ export const DownloadCVButton = () => {
                             border
                             text-sm
                             cursor-pointer
-                            border-[#18AA80]"
+                            border-[#18AA80]
+                            focus:outline-none
+                            focus-visible:ring-2
+                            focus-visible:ring-brand-green"
             href={danmcodeCv}
             download="cv_daniel_muelas.pdf"
         >
-            <ArrowDownTrayIcon className="w-4 h-4 text-white" />
+            <ArrowDownTrayIcon aria-hidden="true" className="w-4 h-4 text-white" />
             download_cv
+            <span className="sr-only">(PDF)</span>
         </a>
     )
 }

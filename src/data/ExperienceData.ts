@@ -2,38 +2,50 @@ import type { ExperienceEntry } from "../types";
 
 export const experienceData: ExperienceEntry[] = [
     {
-        id: 'pisas-2',
-        title: 'Coordinador de tecnología',
-        company: 'Protecnica Ingeniería S.A.S',
-        duration: 'Enero 2024 - Present',
-        description: `// Desarrollo de API RESTful con Node.js y TypeScript para procesos ETL conectados a Power BI
-// Desarrollo de intranet usando React y Tailwind CSS para el manejo de permisos, restaurante y agenda de salas de reuniones. 
-// Automatización de backups en Linux usando scripts en Python
-// Mantenimiento de aplicaciones legacy en PHP y Laravel.`,
+        id: 'gsc-director',
+        title: 'Director de Tecnología',
+        company: 'Gestión y Servicios Corporativos',
+        duration: 'jun 2026 – actual',
+        highlights: [
+            'Lidero el desarrollo del sistema de gestión de infraestructura vial, que reemplaza un flujo 100% manual.',
+        ],
+    },
+    {
+        id: 'protecnica-dev',
+        title: 'Desarrollador de Software / Coordinador de TI',
+        company: 'Protécnica Ingeniería',
+        duration: 'ene 2024 – mar 2026',
+        highlights: [
+            'Sistema de comisiones en Node.js y TypeScript integrado con el ERP: de 1 día a ~5 minutos.',
+            'API REST de control de accesos con QR, con app web y móvil y reportes automáticos.',
+            'Intranet en Node.js y React para vacaciones, permisos y pedidos.',
+        ],
     },
     {
         id: 'konecta',
-        title: 'Analista de desarrollo KCRM',
+        title: 'Analista de Desarrollo',
         company: 'Konecta',
-        duration: 'Julio 2023 - Diciembre 2023',
-        description: `// Mantenimiento y desarrollo del CRM interno usando el framework YII2
-// Soporte de cuarto y quinto nivel, resolución de bugs y mejoras en rendimiento del sistema`,
+        duration: 'jul – dic 2023',
+        highlights: [
+            'CRM en PHP Yii2, PostgreSQL y Docker.',
+            'Landing de PQRs con Laravel.',
+        ],
     },
     {
-        id: 'pisas-1',
-        title: 'Coordinador de Tecnología',
-        company: 'Coordinadora de Tecnología',
-        duration: 'Enero 2023 - Agosto 2023',
-        description: `// Mantenimiento de servicios de red y soporte a usuarios finales.
-// Gestión de dispositivos como impresoras, cámaras y UPS.`,
+        id: 'protecnica-ti',
+        title: 'Coordinador de TI',
+        company: 'Protécnica Ingeniería',
+        duration: 'ene – jun 2023',
+        // TODO: agregar logros de este cargo (no hay datos en el prompt).
+        highlights: [],
     },
     {
-        id: 'segomega',
-        title: 'Asistente de tecnología',
-        company: 'Seguridad Omega Ltda',
-        duration: 'Febrero 2020 - Diciembre 2023',
-        description: `// Desarrollo de app móvil “Protección en Línea” con Flutter
-// Creación de API RESTful en PHP para integrar múltiples sistemas internos.
-// Soporte técnico a usuarios y automatización de tareas básicas.`,
+        id: 'seguridad-omega',
+        title: 'Asistente Técnico',
+        company: 'Seguridad Omega',
+        duration: 'feb 2020 – ene 2023',
+        highlights: [
+            'App móvil corporativa en Flutter publicada en las tiendas de aplicaciones.',
+        ],
     },
 ];

@@ -14,7 +14,7 @@ export const PageLayout = () => {
     return (
         <div
             className="min-h-screen 
-                bg-gradient-to-br from-[var(--dark-blue)] via-[var(--dark-blue)] to-[var(--brand-green)]
+                bg-gradient-to-br from-[var(--dark-blue)] via-[var(--dark-blue)] to-cyan-950
                 text-white 
                 font-inter 
                 flex flex-col"

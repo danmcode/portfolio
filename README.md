@@ -1,8 +1,8 @@
-# 🧑‍💻 Portafolio de Daniel Muelas
+# Portafolio de Daniel Muelas — Backend Engineer
 
-Este repositorio contiene mi **portafolio personal de proyectos** como desarrollador de software. Aquí presento soluciones reales, ideas experimentales y herramientas que he desarrollado usando mi stack favorito: **React, TypeScript, Tailwind CSS, Node.js y Docker**.
+Portafolio personal publicado en https://danmcode.github.io/portfolio/. Presenta mi perfil como Backend Engineer (Node.js, TypeScript, NestJS, PostgreSQL y AWS), mis proyectos y mi experiencia.
 
-Mi objetivo con este portafolio es compartir mi crecimiento, estilo de desarrollo y pasión por crear cosas útiles, limpias y bien pensadas.
+Hecho con React, Vite, TypeScript y Tailwind CSS.
 
 ---
 
@@ -56,18 +56,25 @@ El proyecto sigue **Atomic Design**:
 ```
 src/
 ├── components/
-│   ├── atoms/       → Button, Link, NavItem, Text
-│   ├── molecules/   → Navbar, SideBarNavigation, EditorTabs, WorkExperienceStepper
-│   └── organisms/   → Header, Footer, HeroSection
+│   ├── atoms/       → Button, Link, SectionTitle, TechBadge, Text
+│   ├── molecules/   → ArchitectureDiagram, ContactLinks, Navbar, ProjectCard, WorkExperienceStepper
+│   └── organisms/   → FeaturedProject, Footer, Header, HeroSection
 ├── layouts/         → PageLayout (Header + contenido + Footer)
 ├── pages/           → About, Projects
-├── hooks/           → useTabs, useMediaQuery
-├── data/            → Contenido de proyectos y experiencia
+├── hooks/           → useMediaQuery, usePageTitle
+├── data/            → Perfil, proyectos, experiencia, habilidades y catálogo de tecnologías
 ├── types/           → Tipos compartidos
 └── styles/          → Tailwind + tokens de color
 ```
 
-Para agregar un proyecto o una experiencia solo hay que editar `src/data/ProjectsData.ts` o `src/data/ExperienceData.ts`.
+Todo el contenido está en `src/data/`:
+
+- `profile.ts`: datos personales, sobre mí, educación y habilidades.
+- `ProjectsData.ts`: proyectos. El primero se muestra como destacado.
+- `ExperienceData.ts`: experiencia laboral.
+- `tech.ts`: nombre, icono y color de cada tecnología.
+
+La imagen Open Graph está en `public/og-image.png` (1200×630) y las etiquetas SEO en `index.html`.
 
 ---
 
@@ -78,32 +85,8 @@ Para agregar un proyecto o una experiencia solo hay que editar `src/data/Project
 
 ---
 
-## ✨ ¿Qué encontrarás en este portafolio?
-
-- Proyectos reales desarrollados con React, Node.js y PostgreSQL.
-- Automatizaciones útiles y herramientas para el día a día.
-- Experimentos personales para aprender nuevas tecnologías.
-- Capturas, descripciones y enlaces para ver cada uno en acción.
-
----
-
-## 🧠 Stack principal
-
-- ⚛️ React + Vite + TypeScript
-- 🎨 Tailwind CSS
-- 🐘 PostgreSQL
-- 🐳 Docker
-- 💻 Linux + CLI tools
-
----
-
 ## 📬 Contacto
 
-Si te interesa lo que hago, ¡hablemos!
-
 📧 danmcode@gmail.com  
-🔗 [LinkedIn](https://www.linkedin.com/in/danmcode)
-
----
-
-> “Nunca dejes de aprender, nunca dejes de construir.” 🚀
+🔗 [LinkedIn](https://www.linkedin.com/in/danmcode)  
+🐙 [GitHub](https://github.com/danmcode)

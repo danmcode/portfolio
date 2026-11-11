@@ -1,95 +1,69 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { ArrowRightIcon, MapPinIcon } from '@heroicons/react/24/outline';
 import { Text } from '../../atoms/Text';
 import { WorkExperienceStepper } from '../../molecules/WorkExperienceStepper';
+import { ContactLinks } from '../../molecules/ContactLinks';
 import { experienceData } from '../../../data/ExperienceData';
+import { profile } from '../../../data/profile';
+import { usePageTitle } from '../../../hooks/usePageTitle';
 
 /**
  * HeroSection Component (Organism)
  *
- * Este componente representa la sección principal de bienvenida en el portafolio.
- * Contiene el saludo, el nombre del desarrollador, el título y la información de contacto
- * simulando un bloque de código, y ahora una sección para la experiencia laboral.
+ * Página de inicio: nombre, titular, resumen profesional, contacto y experiencia.
  * Usa un layout a dos columnas en pantallas grandes.
  */
 export const HeroSection: React.FC = () => {
+    usePageTitle();
+
     return (
         <section
-            id="hello"
-            className="w-full flex flex-col lg:flex-row justify-center items-start py-16 md:py-24 gap-8 lg:gap-12 px-4 sm:px-6"
+            aria-labelledby="hero-title"
+            className="w-full flex flex-col lg:flex-row justify-center items-start py-8 md:py-16 gap-10 lg:gap-12"
         >
             <div className="flex flex-col items-start w-full lg:w-1/2 max-w-full">
-                <Text variant="p" className="text-lg text-gray-300 mb-2">
-                    Hola 👋, soy
+                <Text variant="p" className="font-mono text-base text-gray-300 mb-2">
+                    Hola, soy
                 </Text>
 
-                <Text variant="h1" className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-2">
-                    Daniel Alexander Muelas
-                </Text>
+                <h1 id="hero-title" className="font-inter text-4xl sm:text-5xl font-bold text-white mb-3">
+                    {profile.name}
+                </h1>
 
-                <Text variant="h2" className="text-2xl sm:text-3xl md:text-4xl font-semibold text-brand-green mb-8">
-                    &gt; Desarrollador Web FullStack
-                </Text>
+                <p className="text-2xl sm:text-3xl font-semibold text-brand-green mb-3">
+                    <span aria-hidden="true" className="font-mono">&gt; </span>
+                    {profile.role}
+                </p>
 
-                <pre className="custom-scrollbar overflow-auto bg-gray-800 p-4 rounded-lg text-sm leading-relaxed max-w-full overflow-x-auto">
-                    <code className="language-typescript">
-                        <span className="text-gray-400">// mi número de teléfono</span>{"\n"}
-                        <span className="text-blue-400">const </span>
-                        <span className="text-green-400">telephoneNum </span>
-                        <span className="text-white">= </span>
-                        <a
-                            href="https://wa.me/573108903571"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-orange-300 underline underline-offset-2 hover:text-green-400"
-                        >
-                            310 890 35 71
-                        </a>;
-                        {"\n"}
-                        {"\n"}
-                        <span className="text-gray-400">// mi correo electrónico</span>{"\n"}
-                        <span className="text-blue-400">const </span>
-                        <span className="text-green-400">email </span>
-                        <span className="text-white">= </span>
-                        <a
-                            href="mailto:%22Daniel%20Muelas%20Rivera%22%20<danmcode@gmail.com>?subject=Contacto%20desde%20tu%20portfolio"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-orange-300 underline underline-offset-2 hover:text-green-400"
-                        >
-                            danmcode@gmail.com
-                        </a>;
-                        {"\n"}
-                        {"\n"}
-                        <span className="text-gray-400">// También puedes visitar mi GitHub</span>{"\n"}
-                        <span className="text-blue-400">const </span>
-                        <span className="text-green-400">githubLink </span>
-                        <span className="text-white">= </span>
-                        <a
-                            href="https://github.com/danmcode"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-orange-300 underline underline-offset-2 hover:text-green-400"
-                        >
-                            https://github.com/danmcode
-                        </a>;
-                        {"\n"}
-                        {"\n"}
-                        <span className="text-gray-400">// Puedes visitarme en mi LinkedIn</span>
-                        {"\n"}
-                        <span className="text-blue-400">const </span>
-                        <span className="text-green-400">linkedInPage </span>
-                        <span className="text-white">= </span>
-                        <a
-                            href="https://www.linkedin.com/in/danmcode/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-orange-300 underline underline-offset-2 hover:text-green-400"
-                        >
-                            https://www.linkedin.com/in/danmcode/
-                        </a>
-                        ;
-                    </code>
-                </pre>
+                <p className="text-sm sm:text-base text-gray-300 mb-2">
+                    Node.js · TypeScript · NestJS · PostgreSQL · AWS
+                    <span className="block text-gray-400">APIs, automatización e integraciones</span>
+                </p>
+
+                <p className="inline-flex items-center gap-1.5 text-sm text-gray-400 mb-8">
+                    <MapPinIcon aria-hidden="true" className="h-4 w-4" />
+                    {profile.location} · {profile.availability}
+                </p>
+
+                <div className="bg-gray-800 border border-gray-700 rounded-xl p-5 mb-8 max-w-2xl">
+                    <h2 className="font-mono text-sm text-brand-green mb-3">
+                        <span aria-hidden="true">// </span>sobre mí
+                    </h2>
+                    <div className="space-y-3 text-base leading-relaxed text-gray-200">
+                        {profile.about.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+                    </div>
+                </div>
+
+                <ContactLinks />
+
+                <Link
+                    to="/projects"
+                    className="mt-8 inline-flex items-center gap-2 rounded-full bg-brand-green px-5 py-2.5 text-sm font-semibold text-gray-900 hover:bg-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--dark-blue)]"
+                >
+                    Ver proyectos
+                    <ArrowRightIcon aria-hidden="true" className="h-4 w-4" />
+                </Link>
             </div>
 
             <div className="w-full lg:w-1/2 max-w-full">

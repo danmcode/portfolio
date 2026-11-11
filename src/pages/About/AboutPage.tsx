@@ -1,157 +1,70 @@
-import { Text } from '../../components/atoms/Text';
-import { SideBarNavigation } from '../../components/molecules/SideBarNavigation';
-import { EditorTabs } from '../../components/molecules/EditorTabs';
-import { useTabs } from '../../hooks/useTabs';
+import { AcademicCapIcon, TrophyIcon } from '@heroicons/react/24/outline';
+import { SectionTitle } from '../../components/atoms/SectionTitle';
+import { TechBadge } from '../../components/atoms/TechBadge';
+import { ContactLinks } from '../../components/molecules/ContactLinks';
+import { aiUsageNote, education, profile, skillGroups } from '../../data/profile';
+import { usePageTitle } from '../../hooks/usePageTitle';
 
 /**
- * AboutMePage Component (Page)
+ * AboutPage Component (Page)
  *
- * Este componente representa la página "About Me" completa.
- * Organiza el menú de navegación lateral y el área de contenido principal
- * (simulando un editor de código con pestañas).
+ * Habilidades agrupadas, educación y contacto.
  */
 export const AboutPage = () => {
-    const { openTabs, activeTab, openTab, setActiveTab, closeTab, canClose } = useTabs('bio', { keepLastTab: true });
-
-    const renderContent = () => {
-        switch (activeTab) {
-            case 'bio':
-                return (
-                    <>
-                        <pre className="text-sm leading-relaxed custom-scrollbar overflow-x-auto">
-                            <code>
-                                <span className="text-gray-400">/**</span>{"\n"}
-                                <span className="text-gray-400"> * Acerca de Daniel Muelas</span>{"\n"}
-                                <span className="text-gray-400"> * Bienvenidos a mi portafolio.</span>{"\n"}
-                                <span className="text-gray-400"> */</span>{"\n"}
-                                {"\n"}
-                                <span className="text-blue-400">const</span>{" "}
-                                <span className="text-green-400">bio</span>{" "}
-                                <span className="text-white">=</span>{" "}
-                                <span className="text-orange-300">`</span>
-                                {"\n"}
-                                <span className="text-orange-300">
-                                    {"  "}Soy Daniel Muelas, nací en 1997 y siempre he sido un apasionado de la tecnología.
-                                </span>
-                                {"\n"}
-                                <span className="text-orange-300">
-                                    {"  "}Estudié Ingeniería Informática y actualmente trabajo como desarrollador Full Stack.
-                                </span>
-                                {"\n"}
-                                <span className="text-orange-300">
-                                    {"  "}Mi stack principal incluye React, Node.js, TypeScript y Docker, aunque también disfruto
-                                </span>
-                                {"\n"}
-                                <span className="text-orange-300">
-                                    {"  "}explorar nuevas herramientas y buenas prácticas del ecosistema JavaScript.
-                                </span>
-                                {"\n"}
-                                <span className="text-orange-300">
-                                    {"  "}Soy fan de Linux, la automatización, el código limpio y crear soluciones útiles que resuelvan problemas reales.
-                                </span>
-                                {"\n"}
-                                <span className="text-orange-300">
-                                    {"  "}Creo en la mejora continua, en compartir conocimiento y en el poder de la comunidad tech.
-                                </span>
-                                {"\n"}
-                                <span className="text-orange-300">
-                                    {"  "}Cuando no estoy programando, me gusta aprender, escuchar música y desarmar cosas (a veces funcionan después 😅).
-                                </span>
-                                {"\n"}
-                                <span className="text-orange-300">
-                                    {"  "}Mi meta: nunca dejar de aprender, nunca dejar de construir.
-                                </span>
-                                {"\n"}
-                                <span className="text-orange-300">`</span>;
-                            </code>
-                        </pre>
-
-                    </>
-                );
-            case 'interests':
-                return (
-                    <pre className="text-sm leading-relaxed custom-scrollbar overflow-x-auto">
-                        <code>
-                            <span className="text-gray-400">/**</span>{"\n"}
-                            <span className="text-gray-400"> * [Intereses personales]</span>{"\n"}
-                            <span className="text-gray-400"> * Además del código, disfruto:</span>{"\n"}
-                            <span className="text-gray-400"> * - El fútbol (hincha fiel, claro 😄)</span>{"\n"}
-                            <span className="text-gray-400"> * - Viajar en moto por carretera</span>{"\n"}
-                            <span className="text-gray-400"> * - Los videojuegos (especialmente los retro)</span>{"\n"}
-                            <span className="text-gray-400"> * - Aprender sobre IA y tecnología emergente</span>{"\n"}
-                            <span className="text-gray-400"> * - El café (fuerte y sin azúcar)</span>{"\n"}
-                            <span className="text-gray-400"> * Me gusta explorar, conocer gente nueva y ver el mundo con un casco y curiosidad.</span>{"\n"}
-                            <span className="text-gray-400"> */</span>{"\n"}
-                        </code>
-                    </pre>
-                );
-            case 'education':
-                return (
-                    <pre className="text-sm leading-relaxed custom-scrollbar overflow-x-auto">
-                        <code>
-                            <span className="text-gray-400">/**</span>{"\n"}
-                            <span className="text-gray-400"> * [Diploma] Ingeniería Informática en "Universidad Autónoma de Occidente"</span>{"\n"}
-                            <span className="text-gray-400"> * [Diploma] Tecnólogo en Gestión de Redes de Datos en "Servicio Nacional de Aprendizaje (SENA)"</span>{"\n"}
-                            <span className="text-gray-400"> */</span>{"\n"}
-                        </code>
-                    </pre>
-                );
-            case 'contacts':
-                return (
-                    <pre className="text-sm leading-relaxed">
-                        <code>
-                            <span className="text-gray-400">/**</span>{"\n"}
-                            <span className="text-gray-400"> * [Contacto]</span>{"\n"}
-                            <span className="text-gray-400"> * Email: <a
-                                href="mailto:%22Daniel%20Muelas%20Rivera%22%20<danmcode@gmail.com>?subject=Contacto%20desde%20tu%20portfolio"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-gray-400 underline underline-offset-2 hover:text-green-400"
-                            >
-                                danmcode@gmail.com
-                            </a></span>{"\n"}
-
-                            <span className="text-gray-400"> * Teléfono: <a
-                                href="https://wa.me/573108903571"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-gray-400 underline underline-offset-2 hover:text-green-400"
-                            >
-                                3108903571
-                            </a></span>{"\n"}
-                            <span className="text-gray-400"> */</span>{"\n"}
-                        </code>
-                    </pre>
-                );
-            default:
-                return (
-                    <Text variant="p" className="text-gray-400 italic">
-                        Selecciona una sección del menú lateral para ver su contenido.
-                    </Text>
-                );
-        }
-    };
+    usePageTitle('Sobre mí');
 
     return (
-        <section id="about-me" className="h-full flex flex-col lg:flex-row gap-8 lg:gap-12 py-8 md:py-12">
-            <aside className="w-full lg:w-1/4 bg-gray-800 p-4 rounded-lg flex-shrink-0">
-                <h3 className="text-lg font-semibold text-white mb-4">Información</h3>
-                <SideBarNavigation
-                    activeItem={activeTab}
-                    onItemClick={openTab}
-                />
-            </aside>
+        <div className="py-4 md:py-8 space-y-12">
+            <header>
+                <SectionTitle as="h1">sobre mí</SectionTitle>
+                <div className="max-w-3xl space-y-3 text-gray-200 leading-relaxed">
+                    {profile.about.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+                </div>
+            </header>
 
-            <EditorTabs
-                idPrefix="about"
-                tabs={openTabs}
-                activeTab={activeTab}
-                canClose={canClose}
-                onSelect={setActiveTab}
-                onClose={closeTab}
-            >
-                {renderContent()}
-            </EditorTabs>
-        </section>
+            <section aria-labelledby="skills-title">
+                <SectionTitle id="skills-title">habilidades</SectionTitle>
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
+                    {skillGroups.map((group) => (
+                        <section key={group.title} className="bg-gray-800 border border-gray-700 rounded-xl p-5">
+                            <h3 className="text-lg font-semibold text-white mb-3">{group.title}</h3>
+                            <ul className="flex flex-wrap gap-2">
+                                {group.skills.map((id) => <li key={id}><TechBadge id={id} size="md" /></li>)}
+                            </ul>
+                            {group.title === 'IA' && (
+                                <p className="mt-3 text-sm text-gray-300">{aiUsageNote}</p>
+                            )}
+                        </section>
+                    ))}
+                </div>
+            </section>
+
+            <section aria-labelledby="education-title">
+                <SectionTitle id="education-title">educación</SectionTitle>
+                <ul className="grid grid-cols-1 md:grid-cols-3 gap-5">
+                    {education.map((item) => {
+                        const Icon = item.period ? AcademicCapIcon : TrophyIcon;
+                        return (
+                            <li key={item.title} className="bg-gray-800 border border-gray-700 rounded-xl p-5 flex gap-3">
+                                <Icon aria-hidden="true" className="h-6 w-6 flex-shrink-0 text-brand-green" />
+                                <div>
+                                    <h3 className="font-semibold text-white">{item.title}</h3>
+                                    <p className="text-sm text-gray-300">{item.institution}</p>
+                                    {item.period && <p className="text-sm text-gray-400">{item.period}</p>}
+                                </div>
+                            </li>
+                        );
+                    })}
+                </ul>
+            </section>
+
+            <section aria-labelledby="contact-title">
+                <SectionTitle id="contact-title">contacto</SectionTitle>
+                <p className="text-gray-300 mb-4">
+                    {profile.location} · {profile.availability}
+                </p>
+                <ContactLinks />
+            </section>
+        </div>
     );
 };

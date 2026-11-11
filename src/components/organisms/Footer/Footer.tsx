@@ -26,7 +26,7 @@ export const Footer = () => {
         text-sm
         "
         >
-            <div> <p>&copy; {new Date().getFullYear()} Danmcode. Todos los derechos reservados.</p></div>
+            <div> <p>&copy; {new Date().getFullYear()} Daniel Alexander Muelas Rivera.</p></div>
 
             <div className="flex mt-2 space-x-5">
                 <a
@@ -36,7 +36,7 @@ export const Footer = () => {
                     className="hover:text-white transition-colors duration-200"
                     aria-label="Perfil de GitHub"
                 >
-                    <FaGithub className="h-6 w-6" />
+                    <FaGithub aria-hidden="true" className="h-6 w-6" />
                 </a>
 
                 <a
@@ -46,7 +46,7 @@ export const Footer = () => {
                     className="hover:text-white transition-colors duration-200"
                     aria-label="Perfil de LinkedIn"
                 >
-                    <FaLinkedin className="h-6 w-6" />
+                    <FaLinkedin aria-hidden="true" className="h-6 w-6" />
                 </a>
 
                 <a
@@ -54,7 +54,7 @@ export const Footer = () => {
                     className="hover:text-white transition-colors duration-200"
                     aria-label="Enviar correo"
                 >
-                    <FaEnvelope className="h-6 w-6" />
+                    <FaEnvelope aria-hidden="true" className="h-6 w-6" />
                 </a>
             </div>
         </footer>
