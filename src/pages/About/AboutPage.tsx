@@ -2,7 +2,7 @@ import { Cm, Str, Syntax, Var } from '../../components/atoms/Code';
 import { TechBadge } from '../../components/atoms/TechBadge';
 import { ContactLinks } from '../../components/molecules/ContactLinks';
 import { CodeEditor, type EditorFile } from '../../components/organisms/CodeEditor';
-import { aiUsageNote, education, profile, skillGroups } from '../../data/profile';
+import { aiUsageNote, certifications, education, languages, profile, skillGroups } from '../../data/profile';
 import { usePageTitle } from '../../hooks/usePageTitle';
 
 /** Título de archivo con forma de comentario: `// habilidades`. */
@@ -66,6 +66,12 @@ const SkillsFile = () => (
     </div>
 );
 
+const SubTitle = ({ children }: { children: React.ReactNode }) => (
+    <h3 className="text-green-400 font-semibold mt-6 mb-2">
+        <Syntax className="text-blue-400">## </Syntax>{children}
+    </h3>
+);
+
 const EducationFile = () => (
     <div className="max-w-3xl">
         <FileTitle>educación</FileTitle>
@@ -80,12 +86,32 @@ const EducationFile = () => (
                         </span>
                         <span className="block text-gray-400">
                             {item.institution}{item.period && <> · <Str>{item.period}</Str></>}
+                            {item.note && <> · {item.note}</>}
                         </span>
                     </span>
                 </li>
             ))}
         </ul>
         <Syntax>&nbsp;*/</Syntax>
+
+        <SubTitle>certificaciones</SubTitle>
+        <ul className="flex flex-wrap gap-2">
+            {certifications.map((cert) => (
+                <li key={cert} className="rounded-md border border-gray-600 bg-gray-900/70 px-2.5 py-1.5 text-gray-200">
+                    {cert}
+                </li>
+            ))}
+        </ul>
+
+        <SubTitle>idiomas</SubTitle>
+        <dl className="space-y-1">
+            {languages.map((lang) => (
+                <div key={lang.name}>
+                    <dt className="inline text-white font-semibold">{lang.name}<Syntax>:</Syntax></dt>{' '}
+                    <dd className="inline"><Str>{lang.level}</Str></dd>
+                </div>
+            ))}
+        </dl>
     </div>
 );
 
@@ -108,14 +134,14 @@ export const AboutPage = () => {
     const files: EditorFile[] = [
         { id: 'perfil', name: 'whoami.sh', label: 'Perfil', language: 'Shell', content: <ProfileFile /> },
         { id: 'habilidades', name: 'habilidades.json', label: 'Habilidades', language: 'JSON', content: <SkillsFile /> },
-        { id: 'educacion', name: 'educacion.md', label: 'Educación', language: 'Markdown', content: <EducationFile /> },
+        { id: 'educacion', name: 'educacion.md', label: 'Educación, certificaciones e idiomas', language: 'Markdown', content: <EducationFile /> },
         { id: 'contacto', name: 'contacto.ts', label: 'Contacto', language: 'TypeScript', content: <ContactFile /> },
     ];
 
     return (
-        <section aria-labelledby="about-title">
+        <section aria-labelledby="about-title" className="fit:flex-1 fit:min-h-0 flex flex-col">
             <h1 id="about-title" className="sr-only">Sobre mí</h1>
-            <p className="font-mono text-sm text-gray-400 mb-4">
+            <p className="font-mono text-sm text-gray-400 mb-4 flex-shrink-0">
                 <span aria-hidden="true">// </span>
                 Abre un archivo del explorador para ver cada sección.
             </p>

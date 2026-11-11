@@ -17,10 +17,11 @@ export const PageLayout = () => {
                 bg-gradient-to-br from-[var(--dark-blue)] via-[var(--dark-blue)] to-cyan-950
                 text-white 
                 font-inter 
-                flex flex-col"
+                flex flex-col
+                fit:h-dvh fit:min-h-0"
         >
             <Header />
-            <main className="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+            <main className="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12 fit:py-5 fit:min-h-0 fit:flex fit:flex-col">
                 <Outlet />
             </main>
             <Footer />

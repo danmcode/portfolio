@@ -69,7 +69,7 @@ export const CodeEditor = ({ folder, files, initialFile, idPrefix }: CodeEditorP
     };
 
     return (
-        <div className="flex flex-col rounded-xl overflow-hidden border border-gray-700 bg-gray-800 shadow-lg shadow-black/30 lg:h-[calc(100dvh-14rem)] lg:min-h-[540px]">
+        <div className="flex flex-col rounded-xl overflow-hidden border border-gray-700 bg-gray-800 shadow-lg shadow-black/30 fit:flex-1 fit:min-h-0">
             {/* Barra de título */}
             <div aria-hidden="true" className="relative flex items-center px-4 py-2 bg-gray-900 border-b border-gray-700">
                 <span className="flex gap-1.5">
@@ -86,7 +86,7 @@ export const CodeEditor = ({ folder, files, initialFile, idPrefix }: CodeEditorP
                 {/* Explorador */}
                 <nav
                     aria-label={`Explorador: ${folder}`}
-                    className="lg:w-60 flex-shrink-0 bg-gray-900/50 border-b lg:border-b-0 lg:border-r border-gray-700 font-mono text-sm"
+                    className="lg:w-[17rem] flex-shrink-0 bg-gray-900/50 border-b lg:border-b-0 lg:border-r border-gray-700 font-mono text-sm"
                 >
                     <p aria-hidden="true" className="hidden lg:block px-4 pt-3 pb-1 text-[11px] uppercase tracking-wider text-gray-400">
                         Explorador
@@ -95,11 +95,11 @@ export const CodeEditor = ({ folder, files, initialFile, idPrefix }: CodeEditorP
                         <VscChevronDown className="h-4 w-4" />
                         {folder}
                     </p>
-                    <ul className="flex lg:flex-col overflow-x-auto custom-scrollbar px-2 py-2 lg:py-1 gap-1 lg:gap-0">
+                    <ul className="relative flex flex-wrap lg:flex-nowrap lg:flex-col lg:overflow-y-auto custom-scrollbar px-2 py-2 lg:py-1 gap-1 lg:gap-0">
                         {files.map((file) => {
                             const isActive = file.id === activeTab;
                             return (
-                                <li key={file.id} className="flex-shrink-0">
+                                <li key={file.id} className="lg:w-full">
                                     <button
                                         type="button"
                                         onClick={() => openTab(file.id)}
@@ -108,7 +108,7 @@ export const CodeEditor = ({ folder, files, initialFile, idPrefix }: CodeEditorP
                                             ${isActive ? 'bg-gray-700 text-white' : 'text-gray-300 hover:bg-gray-800 hover:text-white'}`}
                                     >
                                         <FileIcon language={file.language} />
-                                        {file.name}
+                                        <span className="truncate" title={file.name}>{file.name}</span>
                                         <span className="sr-only"> ({file.label})</span>
                                     </button>
                                 </li>

@@ -32,6 +32,7 @@ export interface ExperienceEntry {
     id: string;
     title: string;
     company: string;
+    location?: string;
     duration: string;
     highlights: string[];
 }
@@ -45,4 +46,10 @@ export interface EducationEntry {
     title: string;
     institution: string;
     period?: string;
+    note?: string;
+}
+
+export interface Language {
+    name: string;
+    level: string;
 }

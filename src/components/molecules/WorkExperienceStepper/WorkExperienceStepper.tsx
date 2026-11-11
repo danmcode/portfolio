@@ -22,6 +22,7 @@ export const WorkExperienceStepper: React.FC<Props> = ({ data, className = '' })
             title="~/danmcode/experiencia.log"
             command="git log --experiencia"
             className={className}
+            scrollable
         >
             <h2 id="experience-title" className="text-lg font-bold text-white mb-5">
                 <Syntax>// </Syntax>experiencia
@@ -37,6 +38,7 @@ export const WorkExperienceStepper: React.FC<Props> = ({ data, className = '' })
                         </h3>
                         <p className="text-sm text-green-400 mb-1">
                             {entry.company} <Syntax>·</Syntax><span className="sr-only">,</span> <time className="text-gray-400">{entry.duration}</time>
+                            {entry.location && <span className="text-gray-400"> <Syntax>·</Syntax><span className="sr-only">,</span> {entry.location}</span>}
                         </p>
                         {entry.highlights.length > 0 && (
                             <ul className="space-y-1 text-sm">

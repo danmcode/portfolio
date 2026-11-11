@@ -33,9 +33,9 @@ export const ProjectsPage: React.FC = () => {
     ];
 
     return (
-        <section aria-labelledby="projects-title">
+        <section aria-labelledby="projects-title" className="fit:flex-1 fit:min-h-0 flex flex-col">
             <h1 id="projects-title" className="sr-only">Proyectos</h1>
-            <p className="font-mono text-sm text-gray-400 mb-4">
+            <p className="font-mono text-sm text-gray-400 mb-4 flex-shrink-0">
                 <span aria-hidden="true">// </span>
                 Abre un archivo del explorador para ver cada proyecto. Los proyectos empresariales no tienen repositorio público.
             </p>

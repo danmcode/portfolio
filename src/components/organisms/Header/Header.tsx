@@ -28,7 +28,7 @@ export const Header: React.FC = () => {
     };
 
     return (
-        <header className="w-full items-stretch bg-[var(--dark-blue)] border-b border-gray-700 sticky top-0 z-50 h-full">
+        <header className="w-full items-stretch bg-[var(--dark-blue)] border-b border-gray-700 sticky top-0 z-50 flex-shrink-0">
 
             <div className="flex items-stretch justify-between w-full">
                 <div className="flex items-center px-2 border-r border-gray-700 flex-shrink-0">

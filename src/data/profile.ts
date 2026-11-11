@@ -1,4 +1,4 @@
-import type { EducationEntry, SkillGroup } from '../types';
+import type { EducationEntry, Language, SkillGroup } from '../types';
 
 export const profile = {
     name: 'Daniel Alexander Muelas Rivera',
@@ -32,17 +32,32 @@ export const education: EducationEntry[] = [
     {
         title: 'Campeón SENASOFT Quindío 2016',
         institution: 'SENA',
+        note: 'Competencia nacional de software del SENA',
     },
 ];
 
 export const skillGroups: SkillGroup[] = [
     { title: 'Backend', skills: ['nodejs', 'typescript', 'nestjs', 'express', 'typeorm', 'rest', 'fastapi', 'php'] },
-    { title: 'Datos', skills: ['postgresql'] },
+    { title: 'Datos', skills: ['postgresql', 'schemaDesign', 'migrations'] },
     { title: 'Cloud y DevOps', skills: ['aws', 'docker', 'dockerCompose', 'traefik', 'linux', 'git'] },
     { title: 'Seguridad', skills: ['jwt', 'rbac', 'multitenant', 'audit'] },
-    { title: 'Calidad', skills: ['jest', 'vitest', 'pytest'] },
+    { title: 'Calidad', skills: ['jest', 'vitest', 'pytest', 'prodDebugging'] },
+    { title: 'Integraciones', skills: ['erp', 'whatsapp', 'bulkProcesses', 'legacyMigration'] },
     { title: 'Frontend y móvil', skills: ['nextjs', 'react', 'tanstackQuery', 'tailwind', 'flutter'] },
     { title: 'IA', skills: ['claude'] },
 ];
 
-export const aiUsageNote = 'Uso diario de asistentes de IA (Claude) para código, pruebas y documentación.';
+export const aiUsageNote = 'Uso diario de asistentes de IA (Claude) para generar y refactorizar código, crear pruebas y documentar APIs.';
+
+export const certifications: string[] = [
+    'Backend con NestJS',
+    'Backend con Express.js',
+    'Fundamentos de Node.js',
+    'TypeScript',
+    'Flutter para iOS y Android',
+];
+
+export const languages: Language[] = [
+    { name: 'Español', level: 'Nativo' },
+    { name: 'Inglés', level: 'Lectura de documentación técnica (A2, EF SET)' },
+];

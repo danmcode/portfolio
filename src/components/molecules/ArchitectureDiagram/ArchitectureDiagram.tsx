@@ -31,7 +31,7 @@ export const ArchitectureDiagram = () => (
                 viewBox="0 0 520 440"
                 role="img"
                 aria-labelledby="arch-title arch-desc"
-                className="w-full min-w-[460px] h-auto font-inter"
+                className="w-full min-w-[460px] sm:min-w-0 h-auto font-inter"
             >
                 <title id="arch-title">Arquitectura de Secuara</title>
                 <desc id="arch-desc">
@@ -65,9 +65,10 @@ export const ArchitectureDiagram = () => (
                     <line x1={275} y1={292} x2={275} y2={358} />
                     <line x1={345} y1={265} x2={383} y2={265} />
                 </g>
-                <text x={364} y={257} fill="#9CA3AF" fontSize={11} textAnchor="middle">archivos</text>
+                <text x={447} y={228} fill="#9CA3AF" fontSize={11} textAnchor="middle">archivos</text>
             </svg>
         </div>
+        <p aria-hidden="true" className="sm:hidden mt-1 text-xs text-gray-400 text-center">← desliza para ver el diagrama completo →</p>
         <figcaption className="mt-2 text-xs text-gray-400">
             Traefik enruta a Next.js y a la API. La API usa PostgreSQL y sirve los archivos de S3 solo después de validar permisos.
         </figcaption>

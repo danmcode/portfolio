@@ -41,7 +41,7 @@ export const FeaturedProject = ({ project }: FeaturedProjectProps) => {
                         href={project.link.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 self-start rounded-md border border-brand-green bg-gray-900/70 px-3 py-2 text-sm text-white hover:bg-brand-green hover:text-gray-900 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-green"
+                        className="inline-flex items-center gap-1.5 self-start whitespace-nowrap rounded-md border border-brand-green bg-gray-900/70 px-3 py-2 text-sm text-white hover:bg-brand-green hover:text-gray-900 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-green"
                     >
                         <Syntax className="text-brand-green">$ open </Syntax>
                         {project.link.label}
@@ -90,7 +90,7 @@ export const FeaturedProject = ({ project }: FeaturedProjectProps) => {
                             <ul className="ps-4 space-y-1">
                                 {block.items.map((item) => (
                                     <li key={item}>
-                                        <Str>{item}</Str><Syntax>,</Syntax>
+                                        <Syntax className="text-orange-300">"</Syntax><Str>{item}</Str><Syntax className="text-orange-300">"</Syntax><Syntax>,</Syntax>
                                     </li>
                                 ))}
                             </ul>

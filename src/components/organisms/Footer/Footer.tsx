@@ -9,7 +9,7 @@ import { FaEnvelope, FaGithub, FaLinkedin } from 'react-icons/fa';
  */
 export const Footer = () => {
     return (
-        <footer className="w-full 
+        <footer className="w-full flex-shrink-0 
         bg-[var(--dark-blue)]
         border
         border-gray-700 

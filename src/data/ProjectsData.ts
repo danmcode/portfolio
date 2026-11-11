@@ -11,7 +11,7 @@ export const projectsData: Project[] = [
     {
         id: 'secuara',
         title: 'Secuara',
-        context: 'SaaS en producción',
+        context: 'Fundador y desarrollador backend · 2026 – actual',
         summary: 'SaaS multi-tenant de control de accesos: visitas, novedades, reservas y notificaciones.',
         solution: [
             'Un módulo por dominio en NestJS, con migraciones automáticas e interceptor global de auditoría.',
@@ -26,21 +26,22 @@ export const projectsData: Project[] = [
                 items: [
                     'NestJS 11, TypeScript, TypeORM y PostgreSQL 15.',
                     'ltree para la jerarquía de unidades y unaccent para las búsquedas.',
-                    'Un módulo por dominio, migraciones automáticas e interceptor global de auditoría.',
+                    'Un módulo por dominio y migraciones automáticas al desplegar.',
+                    'Cola de envío de correos procesada en segundo plano y reportes en Excel.',
                 ],
             },
             {
                 title: 'Seguridad',
                 items: [
                     'JWT y permisos por ruta (RBAC).',
-                    'Aislamiento de datos por cliente.',
+                    'Aislamiento de datos por cliente e interceptor global de auditoría.',
                     'Los archivos se sirven solo a través de la API, después de validar permisos.',
                 ],
             },
             {
                 title: 'AWS',
                 items: [
-                    'EC2 y S3 privado, con versionado y cifrado.',
+                    'EC2 y S3 privado, con versionado y cifrado, para fotos y respaldos.',
                     'Rol IAM: sin llaves de acceso en el servidor.',
                     'Respaldos diarios automatizados a S3.',
                     'Costo de ~22 USD al mes.',
@@ -51,13 +52,14 @@ export const projectsData: Project[] = [
                 items: [
                     'Docker multi-stage y Docker Compose.',
                     'Traefik con HTTPS (Let\'s Encrypt).',
+                    'Almacenamiento abstraído: disco local en desarrollo y S3 en producción.',
                 ],
             },
             {
                 title: 'Frontend y pruebas',
                 items: [
                     'Next.js 16, React 19, TanStack Query y Tailwind CSS 4.',
-                    'Pruebas con Jest y Vitest.',
+                    'Pruebas con Jest (API) y Vitest (frontend).',
                 ],
             },
         ],
@@ -77,7 +79,7 @@ export const projectsData: Project[] = [
         problem: 'El proceso se gestionaba con un flujo 100% manual.',
         solution: [
             'Plataforma que cubre de punta a punta la operación y el control financiero.',
-            'Integraciones para enviar contrataciones y terminaciones de contrato de forma masiva.',
+            'Con el equipo, integraciones para enviar contrataciones y terminaciones de contrato de forma masiva.',
             'Arquitectura similar a la de Secuara.',
         ],
         stack: ['nestjs', 'typescript', 'postgresql', 'nextjs', 'docker'],

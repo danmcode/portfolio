@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+/*
+ * fit: pantallas de escritorio con alto suficiente. Ahí el sitio ocupa exactamente la ventana
+ * (sin scroll general) y cada panel tiene su propio scroll. En pantallas menores el scroll es normal.
+ */
+@custom-variant fit (@media (min-width: 1024px) and (min-height: 620px));
+
 /* Tokens expuestos a Tailwind: habilitan clases como text-brand-green, shadow-brand-green/20 y font-inter */
 @theme {
     --color-brand-green: #00BCD4;

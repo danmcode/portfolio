@@ -23,9 +23,20 @@ import {
     SiTypeorm,
     SiTypescript,
     SiVitest,
+    SiWhatsapp,
 } from 'react-icons/si';
 import { TbApi } from 'react-icons/tb';
-import { LuBuilding2, LuClipboardList, LuShieldCheck } from 'react-icons/lu';
+import {
+    LuBug,
+    LuBuilding2,
+    LuClipboardList,
+    LuDatabase,
+    LuFactory,
+    LuGitMerge,
+    LuHistory,
+    LuLayers,
+    LuShieldCheck,
+} from 'react-icons/lu';
 
 export interface TechInfo {
     label: string;
@@ -67,6 +78,13 @@ export const tech = {
     tailwind: { label: 'Tailwind CSS', icon: SiTailwindcss, color: '#06B6D4' },
     flutter: { label: 'Flutter', icon: SiFlutter, color: '#42A5F5' },
     claude: { label: 'Asistentes de IA (Claude)', icon: SiClaude, color: '#D97757' },
+    schemaDesign: { label: 'Diseño de esquemas relacionales', icon: LuDatabase, color: '#E5E7EB' },
+    migrations: { label: 'Migraciones', icon: LuGitMerge, color: '#E5E7EB' },
+    prodDebugging: { label: 'Debugging en producción', icon: LuBug, color: '#E5E7EB' },
+    erp: { label: 'ERP corporativo', icon: LuFactory, color: '#E5E7EB' },
+    whatsapp: { label: 'API de WhatsApp Business', icon: SiWhatsapp, color: '#25D366' },
+    bulkProcesses: { label: 'Procesos masivos', icon: LuLayers, color: '#E5E7EB' },
+    legacyMigration: { label: 'Migración de sistemas legacy', icon: LuHistory, color: '#E5E7EB' },
 } satisfies Record<string, TechInfo>;
 
 export type TechId = keyof typeof tech;
